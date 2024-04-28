@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<ThingDef ParentName="BasedRimefellerMom">
+		<defName>StorageMIN</defName>
+		<label>Малое хранилище химического топлива</label>
+		<description>Хранит химическое топливо, произведенное установками перегонки, химическое топливо можно перекачивать в подсоединенные бункеры для химического топлива.</description>
+		<graphicData>
+			<texPath>Rimefeller/Things/Building/chemTankMin</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(2.5,2)</drawSize>
+			<damageData>
+				<rect>(0.05,0.05,0.95,0.95)</rect>
+			</damageData>
+		</graphicData>
+		<size>(2,1)</size>
+		<rotatable>true</rotatable>
+		<pathCost>180</pathCost>
+		<comps>
+
+			<li Class="Rimefeller.CompProperties_StorageTank">
+				<StorageCap>1000</StorageCap>
+				<Contents>Fuel</Contents>
+			</li>
+			<li Class="CompProperties_Explosive">
+				<compClass>Rimefeller.CompExplosiveTank</compClass>
+				<explosiveRadius>18</explosiveRadius>
+				<explosiveDamageType>Flame</explosiveDamageType>
+				<destroyThingOnExplosionSize>4</destroyThingOnExplosionSize>
+				<startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+				<preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+				<preExplosionSpawnChance>1</preExplosionSpawnChance>
+				<wickTicks>
+					<min>120</min>
+					<max>250</max>
+				</wickTicks>
+			</li>
+		</comps>
+		<stuffCategories>
+			<li>RuggedMetallic</li>
+		</stuffCategories>
+		<costStuffCount>50</costStuffCount>
+		<costList>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</costList>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Flammability>4.0</Flammability>
+		</statBases>
+		<researchPrerequisites>
+			<li>Oil_Industry_C2</li>
+		</researchPrerequisites>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+
+
+</Defs>
